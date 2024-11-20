@@ -70,6 +70,15 @@ a {
 			.hero-link:last-child{
 				margin-right:10px;
 			}
+
+			.hero-link-text{
+				display: none;
+			}
+
+			.hero-link > img.hero-link-image{
+				margin: 0;
+				margin-right: 0;
+			}
 		}
         position: absolute;
         bottom: 20px;
@@ -161,5 +170,12 @@ body {
 		a{
 			text-decoration: none;
 		}
+	}
+}
+
+@media screen and (max-width: 612px) {
+	div.container{
+		padding-left: 15px;
+		padding-right: 15px;
 	}
 }

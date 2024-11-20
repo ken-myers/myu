@@ -55,6 +55,14 @@ $alternate-bg: #373737; /* Light gray for alternating rows */
     margin-left: 40px;
     margin-right: 40px;
 
+	@media screen and (max-width: 612px) {
+		margin-left:0;
+		margin-right:0;
+		.music-item-content{
+			// width:100%;
+		}
+	}
+
 		.music-header.mobile {
 			display: none;
 		}
