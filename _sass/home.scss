@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Slab:wght@100..900&display=swap");
+/* Configurable variables */
+$theme-bg: #2c2c2c; /* White background */
+$theme-fg: #eeeeee; /* Black text */
+$nav-bg: #131523;
+$nav-fg: $theme-fg;
+// $nav-bg: #979df2;
+// $nav-fg: #fff0e7;
+$hero-image: url("/assets/images/sunset1.jpg"); /* Replace with your hero image */
+$logo-font: "Cedarville Cursive", cursive;
+$content-font: "Roboto Slab", serif; /* Replace with your desired font for the rest of the text */
+$alternate-bg: #373737; /* Light gray for alternating rows */
+
+/* Global styles */
+body {
+	background-color: $theme-bg;
+	color: $theme-fg;
+	font-family: $content-font;
+	margin: 0;
+	padding: 0;
+}
+
+#content {
+	width: 100%;
+	height: 100%;
+	h1 {
+		font-weight: 300;
+	}
+
+	p {
+		font-weight: 400;
+	}
+}
+
+#navbar {
+	background-color: $nav-bg;
+	// border-bottom: 1px solid $alternate-bg;
+	padding: 5px;
+	text-align: center;
+
+	#logo-text {
+		font-family: $logo-font;
+		font-size: 40px;
+		// font-weight: bold;
+		// text-transform: uppercase;
+		color: $nav-fg;
+	}
+}
+
+#hero {
+	position: relative;
+	background: $hero-image no-repeat bottom center;
+	background-size: cover;
+	height: 400px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: #ffffff; /* Make hero text white */
+	overflow: hidden;
+  padding: 30px;
+  box-sizing: border-box ;
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		backdrop-filter: blur(5px); /* Apply blur to the hero image */
+		z-index: 0;
+	}
+
+	.hero-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.2); /* Black transparent overlay */
+		z-index: 1;
+	}
+
+	#hero-header,
+	#hero-text {
+		position: relative;
+		z-index: 2; /* Ensure text is above overlay */
+	}
+
+	#hero-header {
+		font-weight: 300;
+		font-size: 48px;
+	}
+
+	#hero-text {
+		font-size: 18px;
+		margin-top: 10px;
+		font-weight: 400;
+	}
+}
+
+#showcase {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	// background: linear-gradient(to bottom, #131523 20%, #8894fa 50%, #fe8e85 80%, #a376b6 100%);
+	background: linear-gradient(
+		to bottom,
+		#131523 15%,
+		#6d76c8 60%,
+		#ca7069 80%,
+		#9069a2 100%
+	);
+
+  align-items: center;
+
+	// background: linear-gradient(to bottom, #131523 20%, #555c9a 50%, #8e4f4a 80%, #413049 100%);
+
+	.music-item {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+    max-width: 950px;
+    margin: auto;
+
+    &:nth-child(1){
+      margin-top: 40px;
+      border-top-right-radius: 6px;
+      border-top-left-radius: 6px;
+      overflow: hidden;
+    }
+
+    &:nth-last-child(1){
+      margin-bottom: 40px;
+      border-bottom-right-radius: 6px;
+      border-bottom-left-radius: 6px;
+      overflow: hidden;
+    }
+
+
+    margin-left: 40px;
+    margin-right: 40px;
+
+		.music-header.mobile {
+			display: none;
+		}
+
+		.music-item-content {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: space-between;
+      // width: 100%;
+			max-width: 950px;
+			padding: 20px;
+			padding-top: 30px;
+			padding-bottom: 30px;
+
+      
+
+			// background: rgba($theme-bg, 0.6);
+
+			// opacity: 0.7;
+			// border-radius: 6px;
+  
+			// border: 2px solid $theme-fg;
+			// margin: 20px;
+		}
+
+		&:nth-child(even) {
+			.music-item-content{
+			  background-color: rgba($alternate-bg, 0.6);
+			}
+			.player {
+				order: 2; /* Move player to the right for even rows */
+			}
+			.music-text {
+				order: 1; /* Move text to the left for even rows */
+			}
+		}
+
+		&:nth-child(odd) {
+		  .music-item-content{
+		    background-color: rgba($theme-bg, 0.6);
+		  }
+		  // background-color: $theme-bg;
+		}
+
+		$col-width: 47%;
+
+		.player {
+			text-align: center;
+			height: 220px;
+			width: $col-width;
+			min-width: 220px;
+
+			iframe,
+			embed {
+				min-width: 100%;
+				width: 100%;
+				height: 100%;
+				border-radius: 3px;
+			}
+		}
+
+		.music-text {
+			width: $col-width;
+			align-self: start;
+
+			.music-description {
+				font-size: 16px;
+				line-height: 1.5;
+				text-align: justify;
+				width: 100%;
+			}
+		}
+
+		.music-header {
+			font-size: 26px;
+			margin: 0 0 10px;
+			width: fit-content;
+			border-bottom: 1px solid $theme-fg;
+			padding-bottom: 3px;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		.music-item:nth-child(even) {
+			// background-color: $alternate-bg;
+
+			.player {
+				order: 0; /* Move player to the right for even rows */
+			}
+			.music-text {
+				order: 2; /* Move text to the left for even rows */
+			}
+		}
+
+		.music-item {
+			flex-direction: column;
+			align-items: stretch;
+
+			.music-text,
+			.player {
+				width: 100%;
+			}
+
+			.mobile.music-header {
+				order: 0;
+				display: inline-block;
+			}
+
+			.music-text {
+				order: 2;
+				.music-header {
+					display: none;
+				}
+			}
+
+			.player {
+				order: 1;
+				margin-top: 10px; /* Add some spacing between sections */
+				margin-bottom: 25px;
+			}
+
+			.music-description {
+				margin-top: 10px;
+			}
+		}
+	}
+}

@@ -1,0 +1,55 @@
+---
+
+---
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>myu</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+		<link
+			rel="stylesheet"
+			href="{{ '/assets/css/main.css' | relative_url }}"
+		/>
+
+
+	</head>
+
+	<body>
+		<div id="navbar">
+			<span id="logo-text">myu</span>
+		</div>
+		<div id ="content">
+			<div id="hero">
+				<div class="hero-overlay"></div>
+				<h1 id="hero-header">my music. lol.</h1>
+				<p id="hero-text">im so quirky. i might even put smth in parentheses. (lol)</p>
+			</div>
+			<div id="showcase">
+				{% assign sorted_music = site.music | sort: "order" %}
+				{% assign N = sorted_music | size | minus: 1 %}
+				{% for music_item in sorted_music %}
+				  {% assign value = forloop.index0 %}
+				  {% assign color = value | interpolate_color: N, '#8894fa', 0.0, '#fe8e85', 0.5, '#a376b6', 1.0 %}
+				  {% assign dark_color = color | darken: 0.6 %} 
+				   <!-- <div class="music-item" style="background-color: {{ dark_color }};"></div> -->
+				
+				<div class="music-item">
+					<div class="music-item-content">
+					  <h1 class="music-header mobile">{{ music_item.title }}</h1>
+					  <div class="player">{{ music_item.embed_html | safe }}</div>
+					  <div class="music-text">
+						<h1 class="music-header">{{ music_item.title }}</h1>
+						<p class="music-description">
+						  {{ music_item.description }}
+						</p>
+					  </div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</body>
+</html>
