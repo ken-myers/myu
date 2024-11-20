@@ -1,0 +1,64 @@
+.container{
+    padding:40px;
+}
+
+#bio-wrapper{
+    max-width: 650px;
+    margin: auto;
+    margin-top: 10px;
+    text-align: justify;
+    padding:40px;
+    padding-top:20px;
+    padding-bottom:20px;
+    border-radius: 6px;
+    background: rgba(rgb(35, 34, 39), 0.6);
+
+
+    p{  
+
+        &.indent{
+            text-indent: 36px;
+            @media screen and (max-width:612px) {
+                text-indent: 0;
+            }
+        }
+        font-size: 18px;
+        font-weight: 350;
+        
+
+        .imgwrapper{
+            display: inline-block;    
+            width: 230px;
+            height:fit-content;
+            border-radius: 5px;
+            margin-top:0.35em;
+            box-sizing: border-box;
+
+            &.right{
+               float:right;
+               margin-left:0.65em; 
+            }
+
+            &.left{
+                float:left;
+                margin-right:0.65em;
+            }
+            img{
+                margin: auto;
+                width: 100%;
+                height: auto;
+                display: block;
+                border-radius: 2px;
+            }
+
+            @media screen and (max-width: 612px){
+                width: 100%;
+                margin-bottom: 25px;
+                img{
+                    max-width: 300px;
+                }
+                // margin: auto;
+            }
+        }
+    }
+}

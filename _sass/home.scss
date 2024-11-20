@@ -1,119 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Slab:wght@100..900&display=swap");
+@import 'constants';
+
 /* Configurable variables */
-$theme-bg: #2c2c2c; /* White background */
-$theme-fg: #eeeeee; /* Black text */
-$nav-bg: #131523;
-$nav-fg: $theme-fg;
+
 // $nav-bg: #979df2;
 // $nav-fg: #fff0e7;
-$hero-image: url("/assets/images/sunset1.jpg"); /* Replace with your hero image */
-$logo-font: "Cedarville Cursive", cursive;
-$content-font: "Roboto Slab", serif; /* Replace with your desired font for the rest of the text */
 $alternate-bg: #373737; /* Light gray for alternating rows */
 
-/* Global styles */
-body {
-	background-color: $theme-bg;
-	color: $theme-fg;
-	font-family: $content-font;
-	margin: 0;
-	padding: 0;
-}
 
-#content {
-	width: 100%;
-	height: 100%;
-	h1 {
-		font-weight: 300;
-	}
 
-	p {
-		font-weight: 400;
-	}
-}
 
-#navbar {
-	background-color: $nav-bg;
-	// border-bottom: 1px solid $alternate-bg;
-	padding: 5px;
-	text-align: center;
-
-	#logo-text {
-		font-family: $logo-font;
-		font-size: 40px;
-		// font-weight: bold;
-		// text-transform: uppercase;
-		color: $nav-fg;
-	}
-}
-
-#hero {
-	position: relative;
-	background: $hero-image no-repeat bottom center;
-	background-size: cover;
-	height: 400px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	color: #ffffff; /* Make hero text white */
-	overflow: hidden;
-  padding: 30px;
-  box-sizing: border-box ;
-	&::before {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		backdrop-filter: blur(5px); /* Apply blur to the hero image */
-		z-index: 0;
-	}
-
-	.hero-overlay {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: rgba(0, 0, 0, 0.2); /* Black transparent overlay */
-		z-index: 1;
-	}
-
-	#hero-header,
-	#hero-text {
-		position: relative;
-		z-index: 2; /* Ensure text is above overlay */
-	}
-
-	#hero-header {
-		font-weight: 300;
-		font-size: 48px;
-	}
-
-	#hero-text {
-		font-size: 18px;
-		margin-top: 10px;
-		font-weight: 400;
-	}
-}
 
 #showcase {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
+
+	margin-top:10px;
+
+  $row-height: 220px;
+  $row-vpad: 30px;
+  $showcase-margin: 40px;
+
 	// background: linear-gradient(to bottom, #131523 20%, #8894fa 50%, #fe8e85 80%, #a376b6 100%);
-	background: linear-gradient(
-		to bottom,
-		#131523 15%,
-		#6d76c8 60%,
-		#ca7069 80%,
-		#9069a2 100%
-	);
+	
 
   align-items: center;
+  justify-content: start;
 
 	// background: linear-gradient(to bottom, #131523 20%, #555c9a 50%, #8e4f4a 80%, #413049 100%);
 
@@ -126,14 +39,14 @@ body {
     margin: auto;
 
     &:nth-child(1){
-      margin-top: 40px;
+    //   margin-top: $showcase-margin;
       border-top-right-radius: 6px;
       border-top-left-radius: 6px;
       overflow: hidden;
     }
 
     &:nth-last-child(1){
-      margin-bottom: 40px;
+      margin-bottom: $showcase-margin;
       border-bottom-right-radius: 6px;
       border-bottom-left-radius: 6px;
       overflow: hidden;
@@ -155,8 +68,12 @@ body {
       // width: 100%;
 			max-width: 950px;
 			padding: 20px;
-			padding-top: 30px;
-			padding-bottom: 30px;
+
+      
+
+			padding-top: $row-vpad;
+			padding-bottom: $row-vpad;
+			min-height: $row-height;
 
       
 
@@ -183,7 +100,7 @@ body {
 
 		&:nth-child(odd) {
 		  .music-item-content{
-		    background-color: rgba($theme-bg, 0.6);
+		    background-color: rgba(rgb(35, 34, 39), 0.6);
 		  }
 		  // background-color: $theme-bg;
 		}
@@ -192,9 +109,11 @@ body {
 
 		.player {
 			text-align: center;
-			height: 220px;
+			height: $row-height;
 			width: $col-width;
 			min-width: 220px;
+      
+
 
 			iframe,
 			embed {

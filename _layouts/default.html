@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/icon/apple-touch-icon.png' | relative_url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/icon/favicon-32x32.png' | relative_url }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/icon/favicon-16x16.png' | relative_url }}">
+</head>
+<body>
+    {% include variables.html %}
+    {% include nav.html %}
+    <div id="content">
+        {% if page.hero_background %}
+        <div class="hero" style="background: url('{{ page.hero_background | relative_url }}') {{ page.hero_background_extra | default: 'no-repeat center center / cover' }};">
+            <div class="hero-overlay"></div>
+            {% if page.hero_header %}
+            <h1 class="hero-header">{{ page.hero_header }}</h1>
+            {% endif %}
+            {% if page.hero_text %}
+            <p class="hero-text">{{ page.hero_text | safe }}</p>
+            {% endif %}
+
+            {% if page.hero_links %}
+            <div class="hero-links">
+                {% for link in page.hero_links %}
+                <a href="{{ link.url }}" class="hero-link">
+                    <img src="{{ link.image | relative_url }}" alt="" class="hero-link-image">
+                    <span class="hero-link-text">{{ link.text }}</span>
+                </a>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+        </div>
+        {% endif %}
+        <div class="container">
+            {{ content }}
+        </div>
+    </div>
+</body>
+</html>
