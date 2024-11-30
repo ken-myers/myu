@@ -1,5 +1,5 @@
 ---
-order: 1
+order: 3
 title: synthmessing
 description: I made synthmessing my senior year of highschool. Around this time is when I started fully applying myself to advancing my production skills. I started this project wanting to make something that would really move me if I heard it out of the blue, something that would stop a conversation when the beat dropped. I have the strongest connection with the song compared to my others. I still make different versions of it. I strive to truly do the song justice. 
 embed_html: >
