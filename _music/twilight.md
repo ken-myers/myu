@@ -1,5 +1,5 @@
 ---
-order: 3
+order: 1
 title: twilight
 description: When making this track, I wanted to expand more on the blend between recording guitar and MIDI synthesizers that I played with in synthmessing. It's composed with live performance in mind. There are plans to make a version of this done by No Clue, but I associate this early version with myu.
 embed_html: >
