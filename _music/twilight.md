@@ -1,5 +1,5 @@
 ---
-order: 1
+order: 2
 title: twilight
 description: When making this track, I wanted to expand more on the blend between recording guitar and MIDI synthesizers that I played with in synthmessing. 
 embed_html: >
