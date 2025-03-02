@@ -1,5 +1,5 @@
 ---
-order: 1
+order: 2
 title: synthplayin
 description: |
  This is a second version of synthmessing that I made from scratch months later after learning more about production and having more experience.
