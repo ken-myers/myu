@@ -1,5 +1,5 @@
 ---
-order: 4
+order: 5
 title: synthmessing
 description: I made synthmessing my senior year of highschool. Around this time is when I started fully applying myself to advancing my production skills. I taught myself EDM techniques such as side-chaining utilizing synthesizers.
 embed_html: >
