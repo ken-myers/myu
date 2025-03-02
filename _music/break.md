@@ -1,5 +1,5 @@
 ---
-order: 4
+order: 7
 title: take a break
 description: |
  I made this song over a summer vacation, it was one of my first executions of topics that I had taught myself such as LFOs and sampling. 
