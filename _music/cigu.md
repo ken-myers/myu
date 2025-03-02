@@ -1,5 +1,5 @@
 ---
-order: 7
+order: 5
 title: can i go upstairs ?
 description: |
  This is a song that I initially wrote, with the vocalist writing the lyrics and the band as a whole arranging the piece. This song was produced along side "rising sun".
