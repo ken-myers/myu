@@ -1,5 +1,5 @@
 ---
-order: 6
+order: 4
 title: rising sun
 description: |
  Producing songs for my band No Clue was my first experience with recording drums, multiple instruments, and working extensively with others. This song was relatively bare-bones when we first wrote it, leaving a lot of room to fill in the gaps during the production.
