@@ -1,5 +1,5 @@
 ---
-order: 1
+order: 2
 title: window
 description: |
   I started this song in February 2025 and spent weekends learning to record and mix Jeremiah Pizano's drumming.
